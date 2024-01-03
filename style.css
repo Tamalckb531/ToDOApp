@@ -92,9 +92,67 @@ li{
 .content{
     flex: 1;
     display: flex;
-    gap: 5px;
+    justify-content: start;
+    align-items: center;
+    gap: 15px;
+}
+.content>.todo{
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--darkNavy);
+}
+
+.content input[type="checkbox"] {
+    appearance: none;
+    outline: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: transparent ;
+    border: 2px solid var(--darkNavy);
+    position: relative;
+}
+
+.content input[type="checkbox"]:checked {
+    background-color: var(--lightNavy);
+    
+}
+
+.content input[type="checkbox"]:checked::before {
+    content: '\2713'; 
+    font-size: 14px; 
+    color: #fff; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+.content input[type="checkbox"]::before {
+    content: ''; 
 }
 
 .buttons{
     margin: auto;
+}
+
+.buttons>.btn{
+    padding: 10px;
+    border-radius: 20%;
+    border: none;
+    font-size: 15px;
+}
+
+.buttons> .edit{
+    background-color: #e67e22;
+    color: white;
+}
+
+.buttons> .cancel{
+    background-color: #e74c3c;
+    color: white;
+}
+
+.cross{
+    text-decoration: solid line-through var(--lightNavy) 1px;
 }
