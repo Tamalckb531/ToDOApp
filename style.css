@@ -133,7 +133,8 @@ li{
 }
 
 .buttons{
-    margin: auto;
+    display: flex;
+    gap: 10px;
 }
 
 .buttons>.btn{
