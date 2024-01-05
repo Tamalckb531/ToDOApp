@@ -1,6 +1,7 @@
 const input = document.querySelector('.input');
 const addButton = document.querySelector('.addBtn');
-const ul = document.querySelector('.ul')
+const ul = document.querySelector('.ul');
+
 
 const TodoCreator = (todo) =>{
 
@@ -55,12 +56,26 @@ const TodoCreator = (todo) =>{
     //* appending li in ul
 
     ul.append(li);
-
 }
 
+//addition
 addButton.addEventListener('click', (e)=>{
     let todo = input.value;
-    TodoCreator(todo);
+    if(todo){
+        TodoCreator(todo);
+    }else{
+        alert("Enter some text first")
+    }
     input.value = "";
+
 })
 
+//delete
+ul.addEventListener('click', (e)=>{
+    if(e.target.innerText === 'X'){
+        const element = e.target;
+        element.parentElement.parentElement.remove();
+    }
+    console.log(e.target.innerText);
+
+})
