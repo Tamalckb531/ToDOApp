@@ -77,7 +77,7 @@ addButton.addEventListener('click', (e)=>{
         alert("Enter some text first");
     }
     input.value = "";
-
+    input.focus();
 })
 
 //Update, cancel and check with event delegation 
@@ -99,6 +99,15 @@ ul.addEventListener('click', (e)=>{
         }else{
             alert("Enter some text first");
             labelText.focus();
+        }
+    }else if(e.target.parentElement.classList.contains('content')){
+        e.target.classList.toggle('cross');
+    }
+    if(e.target.tagName === 'INPUT'){
+        if(e.target.checked){
+            e.target.nextElementSibling.classList.add('cross');
+        }else{
+            e.target.nextElementSibling.classList.remove('cross');
         }
     }
 })
